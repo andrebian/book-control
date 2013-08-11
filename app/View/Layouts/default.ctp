@@ -33,6 +33,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                 
 		echo $this->Html->css('bootstrap');
                 echo $this->Html->css('cake.generic');
+                echo $this->Html->css('jquery-ui-1.10.3.custom');
+                
                 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -42,7 +44,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
+			<h1>Book Control</h1>
 		</div>
 		<div id="content">
 
@@ -60,5 +62,10 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>
+        <?php echo $this->Html->script('jquery'); ?>
+        <?php echo $this->Html->script('jquery-maskmoney'); ?>
+        <?php echo $this->Html->script('jquery-ui-1.10.3.custom'); ?>
+    
+        <?php echo str_replace('$(document).ready(function ()', 'jQuery(document).ready(function($)',  $this->Js->writeBuffer()); ?>
 </body>
 </html>
