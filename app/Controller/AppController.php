@@ -40,23 +40,18 @@ class AppController extends Controller {
         
         // Mecanismo de autenticação            
         $this->Auth->authenticate = array('Blowfish' => array(
-                // Configura o model e os campos
                 'userModel' => 'User',
-//                'fields' => array(
-//                    'username' => 'email',
-//                    'password' => 'senha',
-//                ),
         ));
         
         
         
         $this->Auth->loginAction = array(
-            'controller' => 'user',
+            'controller' => 'users',
             'action' => 'login'
         );
 
         
-        $this->Auth->allow();
+        //$this->Auth->allow();
 
         $blackList = array();
 
@@ -64,12 +59,12 @@ class AppController extends Controller {
         
         
          // Iremos autorizar controllers e actions 
-        $this->Auth->authorize = array(
-            'Actions' => array('actionPath' => 'controllers')
-        );
+//        $this->Auth->authorize = array(
+//            'Actions' => array('actionPath' => 'controllers')
+//        );
 
         //definindo a mensagem
-        $this->Auth->authError = __('<div class="notification msgerror">
+        $this->Auth->authError = __('<div class="alert alert-error">
                                         <div class="alert alert-error">
                                             <p>
                                                 Você precisa realizar o login 

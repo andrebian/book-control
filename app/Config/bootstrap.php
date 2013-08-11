@@ -109,3 +109,6 @@ CakeLog::config('error', array(
 ));
 
 CakePlugin::loadAll();
+
+App::uses('Security', 'Utility');
+Security::setHash('blowfish');
