@@ -32,4 +32,53 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+    
+    public $components = array('Session', 'Auth', 'Acl', 'DebugKit.Toolbar');
+    
+    
+    public function beforeFilter() {
+        
+        // Mecanismo de autenticação            
+        $this->Auth->authenticate = array('Blowfish' => array(
+                // Configura o model e os campos
+                'userModel' => 'User',
+//                'fields' => array(
+//                    'username' => 'email',
+//                    'password' => 'senha',
+//                ),
+        ));
+        
+        
+        
+        $this->Auth->loginAction = array(
+            'controller' => 'user',
+            'action' => 'login'
+        );
+
+        
+        $this->Auth->allow();
+
+        $blackList = array();
+
+        //$this->Auth->deny($blackList);
+        
+        
+         // Iremos autorizar controllers e actions 
+        $this->Auth->authorize = array(
+            'Actions' => array('actionPath' => 'controllers')
+        );
+
+        //definindo a mensagem
+        $this->Auth->authError = __('<div class="notification msgerror">
+                                        <div class="alert alert-error">
+                                            <p>
+                                                Você precisa realizar o login 
+                                                para acessar a área solicitada.
+                                            </p>
+                                        </div>
+                                    </div>');
+        
+        parent::beforeFilter();
+    }
+    
 }
