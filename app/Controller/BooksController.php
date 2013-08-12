@@ -7,6 +7,8 @@ App::uses('AppController', 'Controller');
  */
 class BooksController extends AppController {
 
+    public $paginate = array('order' => array('date_buy' => 'desc'));
+    
 /**
  * index method
  *

@@ -50,7 +50,7 @@ class Book extends AppModel {
                 if ( !empty($attach) ) {
                     $this->data[$this->alias]['attachment'] = $attach;
                 } else {
-                    unset($this->data[$this->alias]['asttachment']);
+                    unset($this->data[$this->alias]['attachment']);
                 }
             }
             

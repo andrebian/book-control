@@ -1,0 +1,37 @@
+
+body{
+    background-color: #fff;
+}
+
+h1{
+    background-color: #0088cc;
+    padding: 20px;
+    margin-top: 2px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+}
+
+.alert{
+    padding: 10px;
+    font-weight: bold;
+}
+.th{background-color: #ddd;}
+
+.container{
+    background-color: #fff;
+}
+.right{float:right;}
+.actions{width: 20%; padding: 1px;}
+
+th a.asc:after {
+	content: ' ⇣';
+}
+th a.desc:after {
+	content: ' ⇡';
+}
+
+.tenpercent{width: 10%;}
+
+.user{position: relative; top: -85px; color: white; float: right; margin-right: 15px;}
+.user a{color:white !important; }

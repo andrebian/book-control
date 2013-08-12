@@ -14,7 +14,7 @@ class UsersController extends AppController {
     public function login() {
         if ( $this->request->is('post') ) {
             if ( $this->Auth->login() ) {
-                $this->Session->setFlash('Login realizado com sucesso!', 'default', array('class' => 'alert alert-succes'));
+                $this->Session->setFlash('Login realizado com sucesso!', 'default', array('class' => 'alert alert-success'));
                 $this->redirect($this->Auth->redirectUrl());
             }
             $this->Session->setFlash('Dados de login inválidos, por favor tente novamente.', 'default', array('class' => 'alert alert-error'));
