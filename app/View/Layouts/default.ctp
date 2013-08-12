@@ -33,7 +33,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         echo $this->Html->css('bootstrap');
         echo $this->Html->css('style');
         echo $this->Html->css('jquery-ui-1.10.3.custom');
-        echo $this->Html->css('jquery-qtip');
 
 
         echo $this->fetch('meta');
