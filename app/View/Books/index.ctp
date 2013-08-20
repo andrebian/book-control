@@ -32,7 +32,7 @@
             <td>R$ <?php echo number_format($book['Book']['price'], 2, ',', '.'); ?>&nbsp;</td>
             <td><?php echo date('d/m/Y', strtotime($book['Book']['date_buy'])); ?>&nbsp;</td>
             <td class="actions">
-                <?php echo $this->Html->link('Log', array('action' => 'log', $book['Book']['id']), array('class' => 'btn btn-mini btn-primary')); ?>
+                <?php echo $this->Html->link('Log', array('controller' => 'books_logs', 'action' => 'index', $book['Book']['id']), array('class' => 'btn btn-mini btn-primary')); ?>
                 &nbsp;
                 <?php echo $this->Html->link('Detalhes', array('action' => 'view', $book['Book']['id']), array('class' => 'btn btn-mini btn-success')); ?>
                 &nbsp;
