@@ -3,6 +3,12 @@
     <li class="active">Detalhes</li>
 </ul>
 
+<?php
+$imageExtensions = array(
+    'jpg', 'jpeg', 'bmp', 'png', 'gif'
+);
+?>
+
 <div class="books view">
     <h2><?php echo 'Informações de "' . $book['Book']['name'] . '"'; ?></h2>
     <dl>
@@ -12,6 +18,23 @@
 
         <dt>Sinopse</dt>
         <dd><?php echo h($book['Book']['resume']); ?>&nbsp;</dd>
+        <br />
+
+        <dt>Capa</dt>
+        <dd>
+            <?php if (!empty($book['Book']['attachment'])) : ?>
+
+                <?php
+                $attachment = $book['Book']['attachment'];
+                $attachmentExploded = explode('.', $attachment);
+                $currentImageExtension = end($attachmentExploded);
+                ?>
+
+                <?php if (in_array($currentImageExtension, $imageExtensions)) : ?>
+                    <?php echo '<br />' . $this->Html->image('/files/' . $book['Book']['attachment'], array('width' => 350)); ?>
+                <?php endif; ?>
+            <?php endif; ?>
+        </dd>
         <br />
 
         <dt>ISBN</dt>

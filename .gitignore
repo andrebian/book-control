@@ -8,6 +8,8 @@
 /build
 /dist
 /tags
+/app/webroot/files/*
+!/app/webroot/files/empty
 
 # OS generated files #
 ######################
