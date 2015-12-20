@@ -61,7 +61,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
             <div class="footer">
                 <hr>
-                Copyright <?php echo date('Y'); ?> - Desenvolvido por 
+                Book Control - 2014 - Desenvolvido por
                 <?php echo $this->Html->link('Andre Cardoso', 'http://andrebian.com', array('target' => '_blank')); ?>
                 <?php
                 echo $this->Html->link(
